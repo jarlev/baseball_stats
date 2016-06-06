@@ -1,0 +1,23 @@
+<h1>Games#new</h1>
+
+
+<h2>This will be the page where you prepare to record games</h2>
+
+
+-Step 1: start by selecting the league, click 'next' button
+
+-Step 2: AJAX will bring up next form, where you can choose an away team and a home team from separate forms. Validations will prevent duplicates.
+
+-Step 3: AJAX will bring up the lineups form, where you can choose from preset lineups (eventually I will include option to create a new lineup on this page)
+
+-Step 4: after selecting lineups, proceed to 'game details form', where manager will choose the game date, location (dropdown from the schedule's 'locations' attribute)
+
+-Step 5: review your changes, then click the 'submit' button. This button only appears after making all previous selections.
+
+
+-Note: Eventually, I'd like to have this type of setup: the league commissioner (league creator) is tasked with creating each season in the database. A season is a separate model, will have a 'year' attribute among things, to keep track of statistics by season and year. When commissioner creates a season, he/she will also need to assign the active teams, and create a weekly schedule. A schedule is a separate model (attributes include week(integer), game_id, date(time), season_length(# of games), location, etc).
+
+Once a season and its schedule have been created, when a manager goes to the 'new game' page, they're already logged in as their team, so the system recognizes them by the manager's team_id. The manager chooses the season, week, and confirms the correct game matchup. Then he/she can proceed to the next screen, where they actually record the game.
+
+
+-Step 6: At this point, the game has officially been created into the database, and the user will be redirected to separate 'record_game' page to continue

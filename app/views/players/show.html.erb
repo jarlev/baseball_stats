@@ -1,0 +1,185 @@
+<div class="container-fluid">
+	<h1>#<%= @player.uniform_number %> <%= @player.first_name %> <%= @player.last_name %></h1>
+	<p>
+		<strong>Position: </strong><%= @player.position.capitalize %>
+		<br>
+		<strong>Bats: </strong><%= @player.bats.capitalize %>, 
+		<strong>Throws: </strong><%= @player.throws.capitalize %>
+		<br>
+		<strong>Height: </strong><%= @player.height_ft%>' <%=@player.height_in%>", 
+		<strong>Weight: </strong><%= @player.weight%> lbs
+	</p>
+	<br>
+	<p>
+		<strong>Born: </strong><%= @player.birthday %>
+		<br>
+		<strong>Gender: </strong><%= @player.gender.capitalize %>
+		<br>
+		<strong>Current Team: </strong><%= link_to @player.team.team_name, team_path(@player.team) %>
+		<br>
+	</p>
+	<br>
+	<h4>Standard Batting</h4>
+	<table class="standard_batting">
+		<thead>
+			<tr>
+				<th align="left">Year
+				</th>
+				<th align="left">Age
+				</th>
+				<th align="left">Team
+				</th>
+				<th>League
+				</th>
+				 <th align="center"><!-- data-stat="G" class="tooltip" tip="Games Played" data-filter="1" data-name="Games Played">-->G
+				</th>
+				<th align="center">PA
+				</th>
+				<th align="center">AB
+				</th>
+				<th align="center">R
+				</th>
+				<th align="center">H
+				</th>
+				<th align="center">2B
+				</th>
+				<th align="center">3B
+				</th>
+				<th align="center">HR
+				</th>
+				<th align="center">RBI
+				</th>
+				<th align="center">SB
+				</th>
+				<th align="center">CS
+				</th>
+				<th align="center">BB
+				</th>
+				<th align="center">SO
+				</th>
+				<th align="center">BA
+				</th>
+				<th align="center">OBP
+				</th>
+				<th align="center">SLG
+				</th>
+				<th align="center">OPS
+				</th>
+				<th align="center">OPS+
+				</th>
+				<th align="center">TB
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="full">
+				<td>2016
+				</td>
+				<td>24
+				</td>
+				<td><%= link_to @player.team.team_name, team_path(@player.team) %>
+				</td>
+				<td><%= link_to @player.team.league.league_name, league_path(@player.team.league)  %>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<br><br>
+	<h4>Standard Fielding</h4>
+	<table class="standard_fielding">
+		<thead>
+			<tr>
+				<th align="left">Year
+				</th>
+				<th align="left">Age
+				</th>
+				<th align="left">Team
+				</th>
+				<th>League
+				</th>
+				<th>Pos
+				</th>
+				 <th align="center"><!-- data-stat="G" class="tooltip" tip="Games Played" data-filter="1" data-name="Games Played">-->G
+				</th>
+				<th align="center">GS
+				</th>
+				<th align="center">CG
+				</th>
+				<th align="center">Inn
+				</th>
+				<th align="center">Ch
+				</th>
+				<th align="center">PO
+				</th>
+				<th align="center">A
+				</th>
+				<th align="center">E
+				</th>
+				<th align="center">DP
+				</th>
+				<th align="center">Fld%
+				</th>
+				<th align="center">R<em>tot</em>
+				</th>
+				<th align="center">R<em>drs</em>
+				</th>
+				<th align="center">R<em>tot</em>/yr
+				</th>
+				<th align="center">R<em>drs</em>/yr
+				</th>
+				<th align="center">RF/9
+				</th>
+				<th align="center">RF/G
+				</th>
+				<th align="center"><em>lg</em>Fld%
+				</th>
+				<th align="center"><em>lg</em>RF9
+				</th>
+				<th align="center"><em>lg</em>RFG
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="full">
+				<td>2016
+				</td>
+				<td>24
+				</td>
+				<td><%= link_to @player.team.team_name, team_path(@player.team) %>
+				</td>
+				<td><%= link_to @player.team.league.league_name, league_path(@player.team.league)  %>
+				</td>
+				<% if @player.position == "outfield" %>
+					<td><%= @player.position.truncate(1, omission: 'OF') %>
+				<% elsif @player.position == "pitcher" %>
+					<td><%= @player.position.truncate(1, omission: 'P') %>
+				<% elsif @player.position == "catcher" %>
+					<td><%= @player.position.truncate(1, omission: 'C') %>
+				<% elsif @player.position == "first base" %>
+					<td><%= @player.position.truncate(1, omission: '1B') %>
+				<% elsif @player.position == "second base" %>
+					<td><%= @player.position.truncate(1, omission: '2B') %>
+				<% elsif @player.position == "shortstop" %>
+					<td><%= @player.position.truncate(1, omission: 'SS') %>
+				<% elsif @player.position == "third base" %>
+					<td><%= @player.position.truncate(1, omission: '3B') %>
+				<% elsif @player.position == "designated hitter" %>
+					<td><%= @player.position.truncate(1, omission: 'DH') %>
+				<% end %>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>

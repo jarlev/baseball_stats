@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_team_id: 1
+  away_team_id: 1
+  inning_count: 1
+  home_team_run: 1
+  away_team_run: 1
+  home_team_hit: 1
+  away_team_hit: 1
+  home_team_error: 1
+  away_team_error: 1
+  winning_team: MyString
+  losing_team: MyString
+  date: 2016-06-01
+  game_type: MyString
+
+two:
+  home_team_id: 1
+  away_team_id: 1
+  inning_count: 1
+  home_team_run: 1
+  away_team_run: 1
+  home_team_hit: 1
+  away_team_hit: 1
+  home_team_error: 1
+  away_team_error: 1
+  winning_team: MyString
+  losing_team: MyString
+  date: 2016-06-01
+  game_type: MyString

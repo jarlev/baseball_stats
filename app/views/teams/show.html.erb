@@ -1,0 +1,161 @@
+<h2><%= @team.team_name %> Statistics and Standings</h2>
+<div class="pull-right">
+	<h4><strong><u>Team info</u></strong></h4>
+	<p><strong>Team captain: </strong></p>
+	<p><strong>Members: </strong><%= @team.players.count %></p>
+	<p><strong>Year Established: </strong></p>
+	<% if manager? %>
+			<p><%= link_to "Delete this team", @team, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></p>
+			<p>Edit active roster</p>
+			<p><%= link_to "Create a new lineup", '#' %></p>
+		<% end %>
+</div>
+<br>
+<h4>Season-By-Season Results</h4>
+<!-- If devisions are needed.... <h5><u>Division: </u></h5>
+ -->
+<table class="season">
+	<thead>
+		<tr>
+			<th>Year
+			</th>
+			<th>Season
+			</th>
+			<th>W 
+			</th>
+			<th>L
+			</th>
+			<th>W-L%
+			</th>
+			<th>GB
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>year...
+			</td>
+			<td>season...
+			</td>
+			<td> wins...
+			</td>
+			<td> losses...
+			</td>
+			<td>.800
+			</td>
+			<td> -- 
+			</td>	
+		</tr>
+	</tbody>
+</table>
+<br>
+<h4>Postseason Results</h4>
+<table class="season">
+	<thead>
+		<tr>
+			<th>Year
+			</th>
+			<th>Season
+			</th>
+			<th>W 
+			</th>
+			<th>L
+			</th>
+			<th>Place
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>year...
+			</td>
+			<td>season...
+			</td>
+			<td> wins...
+			</td>
+			<td> losses...
+			</td>
+			<td>place...
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<h4>Team Standard Batting</h4>
+<table>
+	<thead>
+		<tr>
+			<th>#Bat
+			</th>
+			<th>BatAge
+			</th>
+			<th>R/G
+			</th>
+			<th>G
+			</th>
+			<th>PA
+			</th>
+			<th>AB 
+			</th>
+			<th>R
+			</th>
+			<th>H
+			</th>
+			<th>2B
+			</th>
+			<th>3B
+			</th>
+			<th>HR
+			</th>
+			<th>RBI
+			</th>
+			<th>SB
+			</th>
+			<th>CS
+			</th>
+			<th>BB
+			</th>
+			<th>SO 
+			</th>
+			<th>BA
+			</th>
+			<th>OBP
+			</th>
+			<th>SLG
+			</th>
+			<th>OPS
+			</th>
+			<th>OPS+
+			</th>
+			<th>GDP
+			</th>
+			<th>HBP
+			</th>
+			<th>SH
+			</th>
+			<th>SF
+			</th>
+			<th>IBB 
+			</th>
+			<th>LOB
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> bat...
+			</td>
+			<td> BatAge...
+			</td>
+			<td> R/G...
+			</td>
+			<td> G...
+			</td>	
+		</tr>
+	</tbody>
+</table>
+<br>
+<h4>Team Standard Pitching</h4>
+<table>
+</table>
+<br>

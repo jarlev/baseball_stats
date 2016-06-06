@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  at_bat: 1
+  plate_appearance: 1
+  total_hit: 1
+  single: 1
+  double: 1
+  triple: 1
+  home_run: 1
+  run: 1
+  rbi: 1
+  steal: 1
+  walk: 1
+  hit_by_pitch: 1
+  strikeout: 1
+  lineout: 1
+  popout: 1
+  flyout: 1
+  groundout: 1
+  sacrifice_out: 1
+
+two:
+  at_bat: 1
+  plate_appearance: 1
+  total_hit: 1
+  single: 1
+  double: 1
+  triple: 1
+  home_run: 1
+  run: 1
+  rbi: 1
+  steal: 1
+  walk: 1
+  hit_by_pitch: 1
+  strikeout: 1
+  lineout: 1
+  popout: 1
+  flyout: 1
+  groundout: 1
+  sacrifice_out: 1

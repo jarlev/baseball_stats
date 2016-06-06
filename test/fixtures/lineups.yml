@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team_id: 1
+  player_id: 1
+  name: MyString
+  batting_order: MyString
+  player_position: MyString
+
+two:
+  team_id: 1
+  player_id: 1
+  name: MyString
+  batting_order: MyString
+  player_position: MyString

@@ -1,0 +1,15 @@
+<h2><u>Create a new team</u></h2>
+
+<%= form_for @team, url: teams_path do |f| %>
+	<div class="form-group">
+		<%= f.label :team_name %>
+		<%= f.text_area :team_name, class: "form-inline" %>
+	</div>
+	<div class="form-group">
+    		<%= f.collection_select :league_id, League.all, :id, :league_name, {prompt: "Select a league"}, {class: "form-inline"} %>
+  	</div>
+	 <div class="form-group">
+    		<%= f.select :roster_count, @roster_count, {prompt: "how many players are on your roster?"}, {class: "form-inline"} %>
+  	</div>
+	<%= f.submit "Create team", class: "btn btn-default" %>
+<% end %>

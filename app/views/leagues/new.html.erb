@@ -1,0 +1,33 @@
+<h2><u>Create a new league</u></h2>
+
+<%= form_for @league, url: leagues_path do |f| %>
+	<div class="form-group">
+		<%= f.label :league_name %>
+		<%= f.text_area :league_name, class: "form-inline" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :city %>
+		<%= f.text_area :city, class: "form-inline" %>
+	</div>
+	<div class="form-group">
+    		<%= f.select :state, @states, {prompt: "state"}, {class: "form-inline"} %>
+  	</div>
+  	<div class="form-group">
+		<%= f.label :zip_code %>
+		<%= f.text_area :zip, class: "form-inline" %>
+	</div>
+
+	<div class="form-group">
+    		<%= f.select :baseball, [['baseball', true], ['softball', false]], {prompt: "is this a baseball or softball league?"}, {class: "form-inline"} %>
+  	</div>
+	<div class="form-group">
+    		<%= f.select :team_count, @team_count, {prompt: "how many teams are in the league?"}, {class: "form-inline"} %>
+  	</div>
+	 <div class="form-group">
+    		<%= f.select :max_player, @max_players, {prompt: "max number of players on a roster"}, {class: "form-inline"} %>
+  	</div>
+	<div class="form-group">
+    		<%= f.select :season_length, @season_length, {prompt: "how many games per season?"}, {class: "form-inline"} %>
+  	</div>
+	<%= f.submit "Create league", class: "btn btn-default" %>
+<% end %>

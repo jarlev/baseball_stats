@@ -1,0 +1,177 @@
+<div class="container-fluid">
+	<h2><%= @league.league_name %> Team Statistics and Standings</h2>
+	<div class="pull-right">
+		<h4><strong>League info:</strong></h4>
+		<p>Max # of players: <%= @league.max_player %></p>
+		<p>Regular Seasons</p>
+		<% @regular_seasons.each do |regular_season| %>
+			<p><%= link_to regular_season.season_name, season_path(regular_season) %></p>
+		<% end %>
+			<p>Post-Seasons</p>
+		<% if commissioner? %>
+			<p><%= link_to "Delete this league", @league, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></p>
+			<p><%= link_to "Create a new season", new_season_path %></p>
+			<p>Archive a past season</p>
+		<% end %>
+	</div>
+	<br>
+	<h4>Year:  , Season: </h4>
+	<br>
+	<!-- If divisions are needed.... <h5><u>Division: </u></h5>
+	 -->
+	 <table class="season">
+		<thead>
+			<tr>
+				<th>Team
+				</th>
+				<th>W 
+				</th>
+				<th>L
+				</th>
+				<th>W-L%
+				</th>
+				<th>GB
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @teams.each do |team| %>
+				<tr>
+					<td><%= link_to team.team_name, team_path(team) %>
+					</td>
+					<td> wins...
+					</td>
+					<td> losses...
+					</td>
+					<td>.800
+					</td>
+					<td> -- 
+					</td>	
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	<h4>Postseason</h4>
+	<table class="season">
+		<thead>
+			<tr>
+				<th>Team
+				</th>
+				<th>Year
+				</th>
+				<th>Season
+				</th>
+				<th>W 
+				</th>
+				<th>L
+				</th>
+				<th>Place
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @teams.each do |team| %>
+				<tr>
+					<td><%= link_to team.team_name, team_path(team) %>
+					</td>
+					<td>year...
+					</td>
+					<td>season...
+					</td>
+					<td> wins...
+					</td>
+					<td> losses...
+					</td>
+					<td>place...
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	<h4>Team & League Standard Batting</h4>
+	<table>
+		<thead>
+			<tr>
+				<th>Tm
+				</th>
+				<th>#Bat
+				</th>
+				<th>BatAge
+				</th>
+				<th>R/G
+				</th>
+				<th>G
+				</th>
+				<th>PA
+				</th>
+				<th>AB 
+				</th>
+				<th>R
+				</th>
+				<th>H
+				</th>
+				<th>2B
+				</th>
+				<th>3B
+				</th>
+				<th>HR
+				</th>
+				<th>RBI
+				</th>
+				<th>SB
+				</th>
+				<th>CS
+				</th>
+				<th>BB
+				</th>
+				<th>SO 
+				</th>
+				<th>BA
+				</th>
+				<th>OBP
+				</th>
+				<th>SLG
+				</th>
+				<th>OPS
+				</th>
+				<th>OPS+
+				</th>
+				<th>GDP
+				</th>
+				<th>HBP
+				</th>
+				<th>SH
+				</th>
+				<th>SF
+				</th>
+				<th>IBB 
+				</th>
+				<th>LOB
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @teams.each do |team| %>
+				<tr>
+					<td><%= link_to team.team_name, team_path(team) %>
+					</td>
+					<td> bat...
+					</td>
+					<td> BatAge...
+					</td>
+					<td> R/G...
+					</td>
+					<td> G...
+					</td>	
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+	<h4>Team & League Standard Pitching</h4>
+	<table>
+	</table>
+	<br>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season_id: 1
+  length: 1
+  team_count: 1
+  start_date: 2016-06-01
+  end_date: 2016-06-01
+  post_season_name: MyString
+
+two:
+  season_id: 1
+  length: 1
+  team_count: 1
+  start_date: 2016-06-01
+  end_date: 2016-06-01
+  post_season_name: MyString

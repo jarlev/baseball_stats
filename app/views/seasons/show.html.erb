@@ -1,0 +1,4 @@
+<h1><%= @regular_season.season_name %> <%= @regular_season.start_date.year %></h1>
+<h3><%= @regular_season.league.league_name %></h3>
+
+<p><%= link_to "Create a new post-season", new_post_season_season_path, method: :post %></p>

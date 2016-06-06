@@ -1,0 +1,19 @@
+<h1>Teams - Index</h1>
+<div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><h5><em>sort by: </em></h5></a>
+	<ul class="dropdown-menu">
+		<li>team name</li>
+		<li>league name</li>
+		<li>league city</li>
+		<li>league state</li>
+	</ul>
+</div>
+<br>
+<% @teams.each do |team| %>
+	<ul class="list-inline">
+		<li><%= link_to team.team_name, team_path(team) %></li>
+		<li>(<%= link_to team.league.league_name, league_path(team.league) %>)</li>
+	</ul>
+<% end %>
+<br>
+<%= link_to "Create a new team", new_team_path, class: "btn btn-default" %>

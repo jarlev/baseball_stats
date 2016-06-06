@@ -1,0 +1,37 @@
+<h1>Create a new player</h1>
+<br>
+<div class="container-fluid">
+	<%= form_for @player, url: players_path do |f| %>
+		<div class="form-group">
+			<%= f.text_area :first_name, placeholder: "first name", class: "form-inline" %><br>
+			<%= f.text_area :last_name, placeholder: "last name", class: "form-inline" %><br>
+		</div>
+		<div class="form-group">
+	    		<%= f.collection_select :team_id, Team.all, :id, :team_name, {prompt: "Select a team"}, {class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.select :gender, @gender, {prompt: "gender"}, {class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.date_select :birthday, {start_year: 1930, end_year: 2016, prompt: {day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.select :height_ft, options_for_select(3..7), {prompt: "height (ft.)"}, {class: "form-inline"} %>
+	    		<%= f.select :height_in, options_for_select(0..11), {prompt: "in."}, {class: "form-inline"} %>
+	    		<%= f.number_field :weight, {placeholder: "weight", class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.select :uniform_number, options_for_select(0..99), {prompt: "uniform number"}, {class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.select :position, @positions, {prompt: "preferred position"}, {class: "form-inline"} %>
+	  	</div>
+		 <div class="form-group">
+	    		<%= f.select :bats, @bats, {prompt: "bats?"}, {class: "form-inline"} %>
+	  	</div>
+	  	<div class="form-group">
+	    		<%= f.select :throws, @throws, {prompt: "throws?"}, {class: "form-inline"} %>
+	  	</div>
+		<%= f.submit "Create player", class: "btn btn-default" %>
+	<% end %>
+</div>

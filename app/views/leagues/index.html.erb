@@ -1,0 +1,25 @@
+<h1>Leagues - Index</h1>
+<div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><h5><em>sort by: </em></h5></a>
+	<ul class="dropdown-menu">
+		<li>league name</li>
+		<li>league city</li>
+		<li>league state</li>
+	</ul>
+</div>
+<h3>
+	<% @leagues.each do |league| %>
+		<%= link_to league.league_name, league_path(league) %>
+		<br>
+		<ul>
+			<h4>Location: (city, state, zip)</h4>
+			<h4>Founded: (year) </h4>
+			<h4>Commissioner: <%= league.commissioner.name %></h4>
+			<h4>Teams: <%= league.teams.count %></h4>
+		</ul>
+		<br>
+	<% end %>
+</h3>
+<%= link_to "Create a new league", new_league_path, class: "btn btn-default" %>
+<br>
+<br>
